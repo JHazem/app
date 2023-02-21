@@ -16,7 +16,7 @@
     <main class="container">
       <section class="row m-1">
         <article class="col">
-          <form method="post" th:action="@{/s}" th:object="${student}">
+          <form method="post" action="/request">
             <div class="mb-3">
               <label for="id" class="form-label">ID</label>
               <input
@@ -25,7 +25,6 @@
                 id="id"
                 name="id"
                 aria-describedby="emailHelp"
-                th:field="*{id}"
               />
               <div id="emailHelp" class="form-text">
                 We'll never share your ID with anyone else.
@@ -38,7 +37,6 @@
                 class="form-control"
                 id="fullname"
                 name="name"
-                th:field="*{name}"
               />
             </div>
             <div class="mb-3">
@@ -46,12 +44,14 @@
               <input
                 type="email"
                 class="form-control"
+                name="email"
                 id="email"
-                th:field="*{email}"
               />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+
+          <a class="text-bg-primary" th:href="@{/path/123}">get user 123</a>
         </article>
       </section>
     </main>
